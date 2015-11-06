@@ -1,6 +1,7 @@
 package mvc;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Scanner;
  */
 public class View {
 
-    public void show(String name, int ID){
+    public void showResult(String name, int ID){
         System.out.println(ID + ": " + name);
     }
 
@@ -38,27 +39,20 @@ public class View {
     }
 
     public int getMenuItem() {
-        int select;
+        int select = 0;
         this.showMainMenu();
-        select = sc.nextInt();
+        try {
+            select = sc.nextInt();
+        } catch (InputMismatchException exception) {
+            this.getMenuItem();
+        }
         sc.nextLine();
         select = this.getSubMenu(select);
         return select;
     }
 
-    public void showMainMenu(){
-        this.clearScreen();
-        System.out.println();
-        System.out.println("  <=  Меню   =>  ");
-        System.out.println("  -------------  ");
-        System.out.println("  1 = Клиенты    ");
-        System.out.println("  2 = Заказы     ");
-        System.out.println("  3 = Выход      ");
-        System.out.println("  -------------  ");
-        System.out.print("  Command => ");
-    }
-
     public int getSubMenu(int select){
+        int sub = 0;
         select *= 10;
         switch (select){
             case 10:
@@ -71,21 +65,34 @@ public class View {
                 this.showExitMenu();
                 break;
             default:
-                this.getSubMenu(select);
+                this.getMenuItem();
                 break;
         }
-        select += sc.nextInt();
-        return select;
+        try {
+            sub = select + sc.nextInt();
+        } catch (InputMismatchException exception) {
+            this.getSubMenu(select / 10);
+        }
+        sc.nextLine();
+        while (sub % 10 > 2) {
+            this.getSubMenu(select / 10);
+        }
+        if (sub % 10 == 1) {
+            this.getMenuItem();
+        } else if (sub == 32) {
+            System.exit(0);
+        }
+        return sub;
     }
 
-    public void showExitMenu(){
+    public void showMainMenu(){
         this.clearScreen();
         System.out.println();
-        System.out.println("  <=  Выход  =>  ");
+        System.out.println("  <=  Меню   =>  ");
         System.out.println("  -------------  ");
-        System.out.println("  1 = Назад      ");
-        System.out.println("  2 = Выход      ");
-        System.out.println();
+        System.out.println("  1 = Клиенты    ");
+        System.out.println("  2 = Заказы     ");
+        System.out.println("  3 = Выход      ");
         System.out.println("  -------------  ");
         System.out.print("  Command => ");
     }
@@ -114,4 +121,15 @@ public class View {
         System.out.print("  Command => ");
     }
 
+    public void showExitMenu(){
+        this.clearScreen();
+        System.out.println();
+        System.out.println("  <=  Выход  =>  ");
+        System.out.println("  -------------  ");
+        System.out.println("  1 = Назад      ");
+        System.out.println("  2 = Выход      ");
+        System.out.println();
+        System.out.println("  -------------  ");
+        System.out.print("  Command => ");
+    }
 }
