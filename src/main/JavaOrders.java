@@ -7,7 +7,7 @@ import mvc.View;
 import java.io.IOException;
 
 /**
- * Исполняющий код
+ * Исполняющий код программы
  */
 public class JavaOrders {
     public static void main(String[] args) {
