@@ -22,5 +22,6 @@ out/
 # IDE settings #
 ################
 .idea/
+src/META-INF/
 *.mf
 *.iml
