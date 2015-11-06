@@ -2,10 +2,9 @@ package mvc;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.concurrent.Callable;
 
 /**
- * Представление данных
+ * Представление данных и интерфейс пользователя
  */
 public class View {
 
@@ -39,7 +38,7 @@ public class View {
     }
 
     public int getMenuItem() {
-        int select = 0;
+        int select;
         this.showMainMenu();
         select = sc.nextInt();
         sc.nextLine();
