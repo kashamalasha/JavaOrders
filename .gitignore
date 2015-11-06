@@ -22,3 +22,5 @@
 # IDE settings #
 ################
 .idea/
+*.inf
+*.iml
