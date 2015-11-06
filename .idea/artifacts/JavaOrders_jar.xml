@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="JavaOrders:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/JavaOrders_jar</output-path>
-    <root id="archive" name="JavaOrders.jar">
-      <element id="module-output" name="JavaOrders" />
-    </root>
-  </artifact>
-</component>
