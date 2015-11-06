@@ -16,11 +16,6 @@ public class View {
     public Scanner sc = new Scanner(System.in);
 
     public void clearScreen() {
-        //Очистка экрана - строка ввода в нижней части экрана
-        /*for (int i = 0; i < 100; i++) {
-            System.out.println("\b");
-        }*/
-        //Очистка экрана - строка ввода в верхней части экрана
         final String OS = System.getProperty("os.name");
         if (OS.contains("Windows")) {
             try {
