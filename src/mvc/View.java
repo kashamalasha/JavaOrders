@@ -9,12 +9,11 @@ import java.util.Scanner;
  */
 public class View {
 
-    public void showResult(String name, int ID){
-        System.out.println(ID + ": " + name);
-    }
-
     public Scanner sc = new Scanner(System.in);
 
+    public void showResult(String name, int ID) {
+        System.out.println(ID + ": " + name);
+    }
     public void clearScreen() {
         final String OS = System.getProperty("os.name");
         if (OS.contains("Windows")) {
