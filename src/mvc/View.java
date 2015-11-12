@@ -11,8 +11,15 @@ public class View {
 
     public Scanner sc = new Scanner(System.in);
 
-    public void showResult(String name, int ID) {
-        System.out.println(ID + ": " + name);
+    public void showResult(int content) {
+        switch (content) {
+            case 1: //TODO Добавить отображение таблицы с клиентами
+                //code here..
+                break;
+            case 2: //TODO Добавить отображение таблицы с заказами
+                //code here
+                break;
+        }
     }
     public void clearScreen() {
         final String OS = System.getProperty("os.name");
@@ -23,9 +30,7 @@ public class View {
                 e.printStackTrace();
             }
         } else {
-            final String ANSI_CLS = "\u001b[2J";
-            final String ANSI_HOME = "\u001b[H";
-            System.out.print(ANSI_HOME + ANSI_CLS);
+            System.out.print("\u001b[2J\u001b[H");
             System.out.flush();
         }
     }
