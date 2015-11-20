@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Абстрактный класс модели
+ * Класс БД заказчиков
  */
-@XmlRootElement
-public class Model {
+@XmlRootElement(name = "Clients")
+public class ClientsModel {
 
     //Атрибуты класса
 
-    private List<List<String>> clients = new ArrayList<>();
+    private List<Client> clients = new ArrayList<>();
 
     //Конструктор класса
     //Методы класса
