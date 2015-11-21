@@ -1,4 +1,4 @@
-package mvc;
+package vc;
 
 import java.io.IOException;
 import java.util.InputMismatchException;

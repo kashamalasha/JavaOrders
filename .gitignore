@@ -1,0 +1,16 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea/workspace.xml
+.idea/uiDesigner.xml
+
+# Java executable
+out
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+

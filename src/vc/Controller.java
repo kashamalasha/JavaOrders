@@ -1,4 +1,6 @@
-package mvc;
+package vc;
+
+import vc.View;
 
 /**
  * Абстрактный класс контроллера
