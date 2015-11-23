@@ -44,8 +44,8 @@ public class Order {
      * Получить данные заказчика
      * @return запись заказчика
      */
-    public Client getClient() {
-        return client;
+    public String getClient() {
+        return client.getName();
     }
 
     /**
